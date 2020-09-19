@@ -5,17 +5,21 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint . --ignore-path .gitignore",
-    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json)\"",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "check-types": "tsc",
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx)\"",
     "format": "npm run prettier -- --write",
     "check-format": "npm run prettier -- --list-different",
-    "validate": "npm run check-format && npm run lint"
+    "validate": "npm run check-types && npm run check-format && npm run lint"
   },
   "author": "Nikolaev Viktor <maclauddd@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
     "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
     "prettier": "^2.1.2",
-    "eslint-config-prettier": "^6.11.0"
+    "typescript": "^4.0.3"
   }
 }

@@ -25,3 +25,11 @@ npm run format
 ### Install extension VScode
 
 [prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+## Typescript
+
+### Run type check
+
+```bash
+npm run check-types
+```
